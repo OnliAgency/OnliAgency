@@ -227,13 +227,26 @@
             <div data-lang="en" class="hidden">
                 <h3>Join Onli Agency</h3>
             </div>
-            <form class="form" action="https://formspree.io/f/yourFormID" method="POST">
-                <input type="text" name="name" placeholder="Jméno / Name" required>
-                <input type="email" name="email" placeholder="E-mail" required>
-                <input type="text" name="social" placeholder="Instagram / Twitter">
-                <textarea name="note" placeholder="Poznámka / Note"></textarea>
-                <button type="submit">Odeslat / Submit</button>
-            </form>
+           <form action="https://formspree.io/f/yourFormID" method="POST" class="needs-validation" novalidate>
+  <div class="mb-3">
+    <label for="name" class="form-label">Jméno / Name</label>
+    <input type="text" class="form-control" id="name" name="name" placeholder="Jméno / Name" required>
+  </div>
+  <div class="mb-3">
+    <label for="email" class="form-label">E-mail</label>
+    <input type="email" class="form-control" id="email" name="email" placeholder="E-mail" required>
+  </div>
+  <div class="mb-3">
+    <label for="social" class="form-label">Instagram / Twitter</label>
+    <input type="text" class="form-control" id="social" name="social" placeholder="Instagram / Twitter">
+  </div>
+  <div class="mb-3">
+    <label for="note" class="form-label">Poznámka / Note</label>
+    <textarea class="form-control" id="note" name="note" placeholder="Poznámka / Note" rows="4"></textarea>
+  </div>
+  <button type="submit" class="btn btn-lg" style="background-color:#ff4081; color:white; font-weight:bold;">Odeslat / Submit</button>
+</form>
+
         </section>
     </div>
 
