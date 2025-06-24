@@ -118,6 +118,11 @@
 <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
 </head>
 <body>
+    <div style="position: fixed; top: 20px; right: 20px; z-index: 9999;">
+  <button onclick="switchLang('cs')" class="btn btn-sm btn-outline-light me-1">CZ</button>
+  <button onclick="switchLang('en')" class="btn btn-sm btn-outline-light">EN</button>
+</div>
+
     <nav class="navbar navbar-dark bg-dark sticky-top shadow">
   <div class="container">
     <a class="navbar-brand fw-bold" href="#">Onli Agency</a>
@@ -463,6 +468,17 @@
     });
   });
 </script>
+<script>
+  function switchLang(lang) {
+    const allLangBlocks = document.querySelectorAll('[data-lang]');
+    allLangBlocks.forEach(el => {
+      el.classList.toggle('hidden', el.getAttribute('data-lang') !== lang);
+    });
+    currentLang = lang;
+  }
+</script>
+</body>
+</html>
 
 </script>
 </body>
