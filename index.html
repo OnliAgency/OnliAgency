@@ -384,8 +384,9 @@
     <h3 data-aos="fade-down">Join Onli Agency</h3>
   </div>
 
-  <form action="https://formspree.io/f/xnnvgkgo" method="POST"
-         <input type="hidden" name="_redirect" value="https://onliagency.com/dekujeme.html">
+  <form action="https://formspree.io/f/xnnvgkgo" method="POST">
+    <input type="hidden" name="_redirect" id="redirectField" value="https://onliagency.com/dekujeme.html">
+
     <div class="mb-3" data-aos="fade-up" data-aos-delay="0">
       <label for="name" class="form-label">Jméno / Name</label>
       <input type="text" class="form-control" id="name" name="name" required
@@ -412,8 +413,7 @@
 
     <div class="mb-3" data-aos="fade-up" data-aos-delay="300">
       <label for="social" class="form-label">Instagram / Twitter</label>
-      <input type="text" class="form-control" id="social" name="social"
-        placeholder="Instagram / Twitter">
+      <input type="text" class="form-control" id="social" name="social" placeholder="Instagram / Twitter">
     </div>
 
     <div class="mb-3" data-aos="fade-up" data-aos-delay="400">
@@ -431,6 +431,7 @@
     </div>
   </form>
 </section>
+
 
 
     </div>
@@ -470,6 +471,25 @@
         : "<p class='text-center mt-4 fw-bold' style='color:#28a745;'>Děkujeme! Vaše zpráva byla úspěšně odeslána. Brzy se vám ozveme.</p>";
     });
   });
+<script>
+  let currentLang = "cs";
+
+  function switchLang(lang) {
+    const allLangBlocks = document.querySelectorAll('[data-lang]');
+    allLangBlocks.forEach(el => {
+      el.classList.toggle('hidden', el.getAttribute('data-lang') !== lang);
+    });
+
+    currentLang = lang;
+    sessionStorage.setItem("lang", lang);
+
+    const redirectInput = document.getElementById("redirectField");
+    if (redirectInput) {
+      redirectInput.value = (lang === "en")
+        ? "https://onliagency.com/thankyou.html"
+        : "https://onliagency.com/dekujeme.html";
+    }
+  }
 </script>
 
 
