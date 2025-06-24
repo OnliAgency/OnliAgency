@@ -370,39 +370,54 @@
   </div>
 
   <form action="https://formspree.io/f/yourFormID" method="POST"
-        class="needs-validation" novalidate data-aos="fade-up" data-aos-duration="800">
+        class="needs-validation" novalidate>
 
-    <div class="mb-3">
+    <div class="mb-3" data-aos="fade-up" data-aos-delay="0">
       <label for="name" class="form-label">Jméno / Name</label>
-      <input type="text" class="form-control" id="name" name="name" placeholder="Jméno / Name" required
+      <input type="text" class="form-control" id="name" name="name" required
+        placeholder="Jméno / Name"
         oninvalid="this.setCustomValidity(currentLang === 'en' ? 'Please enter your name.' : 'Zadejte své jméno.')"
         oninput="this.setCustomValidity('')">
     </div>
 
-    <div class="mb-3">
+    <div class="mb-3" data-aos="fade-up" data-aos-delay="100">
+      <label for="surname" class="form-label">Příjmení / Surname</label>
+      <input type="text" class="form-control" id="surname" name="surname" required
+        placeholder="Příjmení / Surname"
+        oninvalid="this.setCustomValidity(currentLang === 'en' ? 'Please enter your surname.' : 'Zadejte své příjmení.')"
+        oninput="this.setCustomValidity('')">
+    </div>
+
+    <div class="mb-3" data-aos="fade-up" data-aos-delay="200">
       <label for="email" class="form-label">E-mail</label>
-      <input type="email" class="form-control" id="email" name="email" placeholder="E-mail" required
+      <input type="email" class="form-control" id="email" name="email" required
+        placeholder="E-mail"
         oninvalid="this.setCustomValidity(currentLang === 'en' ? 'Please enter a valid email.' : 'Zadejte platný e-mail.')"
         oninput="this.setCustomValidity('')">
     </div>
 
-    <div class="mb-3">
+    <div class="mb-3" data-aos="fade-up" data-aos-delay="300">
       <label for="social" class="form-label">Instagram / Twitter</label>
-      <input type="text" class="form-control" id="social" name="social" placeholder="Instagram / Twitter">
+      <input type="text" class="form-control" id="social" name="social"
+        placeholder="Instagram / Twitter">
     </div>
 
-    <div class="mb-3">
+    <div class="mb-3" data-aos="fade-up" data-aos-delay="400">
       <label for="note" class="form-label">Poznámka / Note</label>
-      <textarea class="form-control" id="note" name="note" rows="4" placeholder="Poznámka / Note" required
+      <textarea class="form-control" id="note" name="note" rows="4" required
+        placeholder="Poznámka / Note"
         oninvalid="this.setCustomValidity(currentLang === 'en' ? 'Please enter a message.' : 'Zadejte zprávu.')"
         oninput="this.setCustomValidity('')"></textarea>
     </div>
 
-    <button type="submit" class="btn btn-lg" style="background-color:#ff4081; color:white; font-weight:bold;">
-      Odeslat / Submit
-    </button>
+    <div data-aos="fade-up" data-aos-delay="500">
+      <button type="submit" class="btn btn-lg" style="background-color:#ff4081; color:white; font-weight:bold;">
+        Odeslat / Submit
+      </button>
+    </div>
   </form>
 </section>
+
 
     </div>
 
