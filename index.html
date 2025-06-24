@@ -13,6 +13,13 @@
 
 
     <style>
+        .accordion-button:hover {
+  background-color: #f8f9fa;
+  color: #000;
+  font-weight: 500;
+  transition: all 0.2s ease-in-out;
+}
+
      body {
             margin: 0;
             padding: 0;
@@ -271,13 +278,13 @@
   </div>
 </section>
 
-       <section class="my-5">
+      <section class="my-5">
   <!-- Čeština -->
   <div data-lang="cs">
-    <h3 class="mb-4 text-center">Časté dotazy</h3>
+    <h3 class="mb-4 text-center" data-aos="fade-down">Časté dotazy</h3>
     <div class="accordion" id="faqAccordion-cs">
-      <!-- Otázka 1 -->
-      <div class="accordion-item">
+      
+      <div class="accordion-item" data-aos="fade-up" data-aos-delay="100">
         <h2 class="accordion-header" id="faq1-cs">
           <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1-cs" aria-expanded="true" aria-controls="collapse1-cs">
             Je smlouva závazná?
@@ -289,8 +296,8 @@
           </div>
         </div>
       </div>
-      <!-- Otázka 2 -->
-      <div class="accordion-item">
+
+      <div class="accordion-item" data-aos="fade-up" data-aos-delay="200">
         <h2 class="accordion-header" id="faq2-cs">
           <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2-cs" aria-expanded="false" aria-controls="collapse2-cs">
             Kolik to stojí?
@@ -302,8 +309,8 @@
           </div>
         </div>
       </div>
-      <!-- Otázka 3 -->
-      <div class="accordion-item">
+
+      <div class="accordion-item" data-aos="fade-up" data-aos-delay="300">
         <h2 class="accordion-header" id="faq3-cs">
           <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3-cs" aria-expanded="false" aria-controls="collapse3-cs">
             Musím se někde ukazovat?
@@ -315,15 +322,16 @@
           </div>
         </div>
       </div>
+
     </div>
   </div>
 
   <!-- Angličtina -->
   <div data-lang="en" class="hidden">
-    <h3 class="mb-4 text-center">FAQ</h3>
+    <h3 class="mb-4 text-center" data-aos="fade-down">FAQ</h3>
     <div class="accordion" id="faqAccordion-en">
-      <!-- Question 1 -->
-      <div class="accordion-item">
+
+      <div class="accordion-item" data-aos="fade-up" data-aos-delay="100">
         <h2 class="accordion-header" id="faq1-en">
           <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1-en" aria-expanded="true" aria-controls="collapse1-en">
             Is the contract binding?
@@ -335,8 +343,8 @@
           </div>
         </div>
       </div>
-      <!-- Question 2 -->
-      <div class="accordion-item">
+
+      <div class="accordion-item" data-aos="fade-up" data-aos-delay="200">
         <h2 class="accordion-header" id="faq2-en">
           <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2-en" aria-expanded="false" aria-controls="collapse2-en">
             How much does it cost?
@@ -348,8 +356,8 @@
           </div>
         </div>
       </div>
-      <!-- Question 3 -->
-      <div class="accordion-item">
+
+      <div class="accordion-item" data-aos="fade-up" data-aos-delay="300">
         <h2 class="accordion-header" id="faq3-en">
           <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3-en" aria-expanded="false" aria-controls="collapse3-en">
             Do I have to show myself?
@@ -361,9 +369,11 @@
           </div>
         </div>
       </div>
+
     </div>
   </div>
 </section>
+
 
 
 <section id="form">
@@ -374,7 +384,7 @@
     <h3 data-aos="fade-down">Join Onli Agency</h3>
   </div>
 
-  <form action="https://formspree.io/f/yourFormID" method="POST"
+  <form action="https://formspree.io/f/xnnvgkgo" method="POST"
         class="needs-validation" novalidate>
 
     <div class="mb-3" data-aos="fade-up" data-aos-delay="0">
