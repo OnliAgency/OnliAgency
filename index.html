@@ -452,32 +452,25 @@
     e.preventDefault();
 
     const formData = new FormData(form);
+    const currentLang = document.querySelector('[data-lang]:not(.hidden)')?.getAttribute("data-lang") || "cs";
 
     fetch(form.action, {
       method: form.method,
       body: formData
     })
-    .then(response => {
-      const currentLang = document.querySelector('[data-lang]:not(.hidden)')?.getAttribute("data-lang") || "cs";
-
-      if (response.ok) {
-        form.innerHTML = (currentLang === "en")
-          ? "<p class='text-center mt-4 fw-bold' style='color:#28a745;'>Thank you! Your message has been successfully sent. We'll get back to you soon.</p>"
-          : "<p class='text-center mt-4 fw-bold' style='color:#28a745;'>Děkujeme! Vaše zpráva byla úspěšně odeslána. Brzy se vám ozveme.</p>";
-      } else {
-        form.innerHTML = (currentLang === "en")
-          ? "<p class='text-center mt-4 fw-bold text-danger'>Oops! Something went wrong. Please try again later.</p>"
-          : "<p class='text-center mt-4 fw-bold text-danger'>Jejda! Něco se pokazilo. Zkuste to prosím znovu později.</p>";
-      }
+    .then(() => {
+      form.innerHTML = (currentLang === "en")
+        ? "<p class='text-center mt-4 fw-bold' style='color:#28a745;'>Thank you! Your message has been successfully sent. We'll get back to you soon.</p>"
+        : "<p class='text-center mt-4 fw-bold' style='color:#28a745;'>Děkujeme! Vaše zpráva byla úspěšně odeslána. Brzy se vám ozveme.</p>";
     })
     .catch(() => {
-      const currentLang = document.querySelector('[data-lang]:not(.hidden)')?.getAttribute("data-lang") || "cs";
       form.innerHTML = (currentLang === "en")
         ? "<p class='text-center mt-4 fw-bold text-danger'>Oops! Something went wrong. Please try again later.</p>"
         : "<p class='text-center mt-4 fw-bold text-danger'>Jejda! Něco se pokazilo. Zkuste to prosím znovu později.</p>";
     });
   });
 </script>
+
 <script>
   function switchLang(lang) {
     const allLangBlocks = document.querySelectorAll('[data-lang]');
