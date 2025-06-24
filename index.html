@@ -455,22 +455,24 @@
     const formData = new FormData(form);
     const currentLang = document.querySelector('[data-lang]:not(.hidden)')?.getAttribute("data-lang") || "cs";
 
+    // Okamžitě zobraz přechodový text (volitelně)
+    form.innerHTML = (currentLang === "en")
+      ? "<p class='text-center mt-4 fw-bold'>Sending...</p>"
+      : "<p class='text-center mt-4 fw-bold'>Odesílání...</p>";
+
     fetch(form.action, {
       method: form.method,
-      body: formData
+      body: formData,
+      mode: "no-cors" // 👈 důležité pro Formspree free verzi
     })
-    .then(() => {
+    .finally(() => {
       form.innerHTML = (currentLang === "en")
         ? "<p class='text-center mt-4 fw-bold' style='color:#28a745;'>Thank you! Your message has been successfully sent. We'll get back to you soon.</p>"
         : "<p class='text-center mt-4 fw-bold' style='color:#28a745;'>Děkujeme! Vaše zpráva byla úspěšně odeslána. Brzy se vám ozveme.</p>";
-    })
-    .catch(() => {
-      form.innerHTML = (currentLang === "en")
-        ? "<p class='text-center mt-4 fw-bold text-danger'>Oops! Something went wrong. Please try again later.</p>"
-        : "<p class='text-center mt-4 fw-bold text-danger'>Jejda! Něco se pokazilo. Zkuste to prosím znovu později.</p>";
     });
   });
 </script>
+
 
 
 </body>
